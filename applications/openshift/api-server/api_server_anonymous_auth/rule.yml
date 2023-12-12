@@ -40,6 +40,7 @@ references:
     nist: CM-6,CM-6(1)
     pcidss: Req-2.2
     srg: SRG-APP-000516-CTR-001325
+    bsi: APP.4.4.A3
 
 ocil_clause: 'anonymous requests are not authorized'
 

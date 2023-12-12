@@ -63,13 +63,18 @@ controls:
       selected administrators SHOULD be given the right to create or change shares for persistent
       volumes in Kubernetes.
     notes: >-
-      TBD
-    status: pending
+      Requirements are quite vague,
+    status: partial
     rules:
+      # Sentence 1-2
       - api_server_anonymous_auth
+      # Sentence 3
       - kubelet_anonymous_auth
+      # Sentence 3,5
       - kubeadmin_removed
+      # Sentence 4
       - rbac_least_privilege
+      # Sentence 6 is manual
 
   - id: APP.4.4.A4
     title: Separation of Pods
