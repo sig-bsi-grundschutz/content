@@ -65,7 +65,6 @@ selections:
 - file_owner_etc_shadow
 - accounts_passwords_pam_faillock_deny
 - accounts_password_all_shadowed
-- package_talk-server_removed
 - accounts_root_gid_zero
 - selinux_state
 - audit_rules_time_clock_settime
@@ -85,7 +84,6 @@ selections:
 - network_sniffer_disabled
 - audit_rules_session_events
 - package_dhcp_removed
-- package_rsh_removed
 - file_owner_cron_d
 - sshd_set_idle_timeout
 - file_groupowner_cron_weekly
@@ -145,7 +143,6 @@ selections:
 - file_permissions_var_log_audit
 - package_telnet-server_removed
 - file_permissions_unauthorized_world_writable
-- timer_logrotate_enabled
 - package_tftp-server_removed
 - file_permissions_sshd_private_key
 - sshd_disable_tcp_forwarding
@@ -214,7 +211,6 @@ selections:
 - auditd_data_retention_space_left_action
 - rsyslog_files_permissions
 - file_owner_cron_monthly
-- package_talk_removed
 - file_permissions_cron_daily
 - selinux_confinement_of_daemons
 - sysctl_net_ipv4_conf_all_send_redirects
@@ -232,7 +228,6 @@ selections:
 - audit_rules_sysadmin_actions
 - display_login_attempts
 - file_permissions_backup_etc_shadow
-- service_ntpd_enabled
 - audit_rules_dac_modification_fremovexattr
 - sshd_disable_x11_forwarding
 - file_at_deny_not_exist
@@ -247,7 +242,6 @@ selections:
 - rpm_verify_hashes
 - file_owner_cron_allow
 - file_permissions_sshd_pub_key
-- package_rsh-server_removed
 - dconf_gnome_disable_automount
 - gid_passwd_group_same
 - package_xinetd_removed
