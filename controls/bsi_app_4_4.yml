@@ -44,8 +44,10 @@ controls:
       to decommissioning, including development, testing, operation, monitoring, and updates. A
       roles and rights concept and the securing of Kubernetes Secrets MUST be part of the planning
     notes: >-
-      TBD
-    status: pending
+      Since this requirement is a plan only, we cannot test this with compliance checks.
+      The documentation at https://docs.openshift.com/container-platform/latest/cicd/pipelines/understanding-openshift-pipelines.html
+      provides information on the planning
+    status: documentation
     rules: []
 
   - id: APP.4.4.A3
