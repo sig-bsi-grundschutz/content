@@ -76,6 +76,7 @@ controls:
       - kubeadmin_removed
       # Sentence 4
       - rbac_least_privilege
+      - rbac_limit_cluster_admin
       # Sentence 6 is manual
 
   - id: APP.4.4.A4
