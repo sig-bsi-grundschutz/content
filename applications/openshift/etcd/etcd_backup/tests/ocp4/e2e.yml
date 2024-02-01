@@ -1,0 +1,4 @@
+---
+default_result: FAIL
+# the backup depends on the schedule, thus directly after remediation the check will still fail
+result_after_remediation: FAIL

@@ -1,0 +1,28 @@
+# platform = multi_platform_ocp
+apiVersion: config.openshift.io/v1alpha1
+kind: Backup
+metadata:
+  name: etcd-recurring-backup
+spec:
+  etcd:
+    schedule: "20 4 * * *"
+    timeZone: "UTC"
+    pvcName: etcd-backup-pvc
+    retentionPolicy:
+      retentionType: "RetentionNumber"
+      retentionNumber:
+        maxNumberOfBackups: 5
+---
+# platform = multi_platform_ocp
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: etcd-backup-pvc
+  namespace: openshift-etcd
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Gi
+  volumeMode: Filesystem

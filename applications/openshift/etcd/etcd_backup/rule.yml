@@ -1,0 +1,112 @@
+# this should return us a list of "BackupCompleted" status
+# we expect to at least have one completed Backup, to Pass the check
+{{% set etcdbackup_filter = '[.items[].status.conditions[] | select(.type == "BackupCompleted")]' %}}
+{{% set etcdbackup_api_path = '/apis/operator.openshift.io/v1alpha1/etcdbackups' %}}
+{{% set dump_path = etcdbackup_api_path ~ ',' ~ etcdbackup_filter %}}
+documentation_complete: true
+
+title: Configure recurring backups for etcd
+
+description: |-
+  <p>
+  Back up your clusters etcd data regularly and store in a secure location ideally outside the OpenShift Container Platform environment. Do not take an etcd backup before the first certificate rotation completes, which occurs 24 hours after installation, otherwise the backup will contain expired certificates. It is also recommended to take etcd backups during non-peak usage hours because the etcd snapshot has a high I/O cost.
+  </p>
+  <p>
+  For more information, follow
+  {{{ weblink(link="https://docs.openshift.com/container-platform/latest/backup_and_restore/control_plane_backup_and_restore/backing-up-etcd.html#creating-automated-etcd-backups_backup-etcd",
+              text="the relevant documentation") }}}.
+  </p>
+
+rationale: |-
+  While etcd automatically recovers from temporary failures, issues may arise if an etcd cluster loses more than (N-1)/2 or when an update goes wrong.
+  Recurring backups of etcd enable you to recover from a disastrous fail.
+
+identifiers: {}
+
+severity: medium
+
+warnings:
+- general: |-
+    {{{ openshift_filtered_cluster_setting({etcdbackup_api_path: dump_path }) | indent(4) }}}
+
+template:
+  name: yamlfile_value
+  vars:
+    ocp_data: 'true'
+    filepath: {{{ openshift_filtered_path(etcdbackup_api_path, etcdbackup_filter)  }}}
+    yamlpath: "[:].status"
+    entity_check: "at least one"
+    values:
+      - value: "True"
+        operation: "pattern match"
+        type: string
+
+# this check needs the following permissions
+# system:serviceaccount:openshift-compliance:api-resource-collector
+# - verbs:
+#     - list
+#     - get
+#     - watch
+#   apiGroups:
+#     - operator.openshift.io
+#   resources:
+#     - etcdbackups
+
+# for REMEDIATION
+# it was not possible to set this to resourceNames. Creation would still fail.
+# system:serviceaccount:openshift-compliance:compliance-operator
+# the CRB for this account need the following added:
+# - verbs:
+#     - update
+#     - patch
+#     - create
+#     - get
+#     - list
+#     - watch
+#   apiGroups:
+#     - config.openshift.io
+#   resources:
+#     - backups
+# it furthermore needs a new role and rolebinding in the openshift-etcd namespace:
+# ---
+# kind: Role
+# apiVersion: rbac.authorization.k8s.io/v1
+# metadata:
+#   namespace: openshift-etcd
+#   name: compliance-operator.v1.4.0-etcdbackuptest
+#   labels:
+#     olm.owner: compliance-operator.v1.4.0
+#     olm.owner.kind: ClusterServiceVersion
+#     olm.owner.namespace: openshift-compliance
+#     operators.coreos.com/compliance-operator.openshift-compliance: ''
+# rules:
+#   - verbs:
+#       - list
+#       - get
+#       - watch
+#       - create
+#       - patch
+#       - update
+#     apiGroups:
+#       - ''
+#     resources:
+#       - persistentvolumeclaims
+# ---
+# kind: RoleBinding
+# apiVersion: rbac.authorization.k8s.io/v1
+# metadata:
+#   name: compliance-operator.v1.4.0-compliance-operator-etcdbackuptest
+#   namespace: openshift-etcd
+#   labels:
+#     olm.owner: compliance-operator.v1.4.0
+#     olm.owner.kind: ClusterServiceVersion
+#     olm.owner.namespace: openshift-compliance
+#     operators.coreos.com/compliance-operator.openshift-compliance: ''
+# subjects:
+#   - kind: ServiceAccount
+#     name: compliance-operator
+#     namespace: openshift-compliance
+# roleRef:
+#   apiGroup: rbac.authorization.k8s.io
+#   kind: Role
+#   name: compliance-operator.v1.4.0-etcdbackuptest
