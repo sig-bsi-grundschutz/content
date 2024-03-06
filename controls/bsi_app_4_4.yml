@@ -397,9 +397,10 @@ controls:
       
       It is useful to create default policies for each application namespace e.g. to deny all ingress
       traffic by default. The existance of at least one network policy and the automatic creation
-      as part of a namespace template is checked using rules. The creation of suitable NetworkPolicy
-      objects that satisfy the requirements from sections 1 to 3, however, needs to be ensured by the
-      application owner.
+      as part of a namespace template is checked using rules. 
+      
+      The creation of suitable NetworkPolicy objects that satisfy the requirements from sections 1 to 3, 
+      however, needs to be ensured by the application owner.
       
       Section 4: It needs to be ensured organizationally, that only required subjects are granted
       RBAC to change the relevant Kubernetes objects.
@@ -416,20 +417,24 @@ controls:
     levels:
     - elevated
     description: >-
-      A Kubernetes operation SHOULD be set up in such a way that if a site fails, the clusters (and
-      thus the applications in the pods) either continue to run without interruption or can be
+      (1) A Kubernetes operation SHOULD be set up in such a way that if a site fails, the clusters 
+      (and thus the applications in the pods) either continue to run without interruption or can be
       restarted in a short time at another site.
-      Should a restart be required, all the necessary configuration files, images, user data, network
-      connections, and other resources required for operation (including the necessary hardware)
+      (2) Should a restart be required, all the necessary configuration files, images, user data, 
+      network connections, and other resources required for operation (including the necessary hardware)
       SHOULD already be available at the alternative site.
-      For the uninterrupted operation of clusters, the control plane of Kubernetes, the infrastructure
+      (3) For the uninterrupted operation of clusters, the control plane of Kubernetes, the infrastructure
       applications of the clusters, and the pods of the applications SHOULD be distributed across
       several fire zones based on the location data of the corresponding nodes so that the failure of a
       fire zone will not lead to the failure of an application.
     notes: >-
       TBD
     status: pending
-    rules: []
+    rules:
+      # Section 3
+      - three_control_plane_nodes
+      - multiple_nodes_in_every_role
+      # TODO: Check Zones of Nodes
 
   - id: APP.4.4.A20
     title: Encrypted Data Storage for Pods
