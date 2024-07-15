@@ -593,17 +593,6 @@ cat <<EOF > "$kube_apipath$statefulset_apipath"
                         }
                     }
                 ]
-            },
-            "status": {
-                "availableReplicas": 2,
-                "collisionCount": 0,
-                "currentReplicas": 2,
-                "currentRevision": "alertmanager-main-59dd9d8b6c",
-                "observedGeneration": 44,
-                "readyReplicas": 2,
-                "replicas": 2,
-                "updateRevision": "alertmanager-main-59dd9d8b6c",
-                "updatedReplicas": 2
             }
         }
     ],

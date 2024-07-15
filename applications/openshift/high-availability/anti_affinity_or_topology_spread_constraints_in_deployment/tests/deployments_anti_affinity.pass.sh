@@ -241,31 +241,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 1,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2022-04-04T12:44:36Z",
-                        "lastUpdateTime": "2023-11-07T10:21:53Z",
-                        "message": "ReplicaSet \"kube-state-metrics-7d68dd96cc\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    },
-                    {
-                        "lastTransitionTime": "2024-07-11T13:58:41Z",
-                        "lastUpdateTime": "2024-07-11T13:58:41Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    }
-                ],
-                "observedGeneration": 5,
-                "readyReplicas": 1,
-                "replicas": 1,
-                "updatedReplicas": 1
             }
         },
         {
@@ -458,31 +433,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 1,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2023-01-30T10:35:46Z",
-                        "lastUpdateTime": "2023-11-07T10:22:02Z",
-                        "message": "ReplicaSet \"openshift-state-metrics-6698fdb7d7\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    },
-                    {
-                        "lastTransitionTime": "2024-07-11T13:58:41Z",
-                        "lastUpdateTime": "2024-07-11T13:58:41Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    }
-                ],
-                "observedGeneration": 3,
-                "readyReplicas": 1,
-                "replicas": 1,
-                "updatedReplicas": 1
             }
         },
         {
@@ -749,31 +699,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 2,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2023-01-27T10:14:59Z",
-                        "lastUpdateTime": "2023-01-27T10:14:59Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    },
-                    {
-                        "lastTransitionTime": "2022-04-04T12:44:37Z",
-                        "lastUpdateTime": "2024-07-05T10:29:21Z",
-                        "message": "ReplicaSet \"prometheus-adapter-7d7cbd5f78\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    }
-                ],
-                "observedGeneration": 347,
-                "readyReplicas": 2,
-                "replicas": 2,
-                "updatedReplicas": 2
             }
         },
         {
@@ -945,31 +870,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 2,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2023-10-05T11:34:31Z",
-                        "lastUpdateTime": "2023-10-05T11:34:31Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    },
-                    {
-                        "lastTransitionTime": "2023-10-05T11:34:18Z",
-                        "lastUpdateTime": "2023-11-07T10:21:23Z",
-                        "message": "ReplicaSet \"prometheus-operator-admission-webhook-7ccff7b477\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    }
-                ],
-                "observedGeneration": 2,
-                "readyReplicas": 2,
-                "replicas": 2,
-                "updatedReplicas": 2
             }
         },
         {
@@ -1469,31 +1369,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 2,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2023-01-30T10:36:00Z",
-                        "lastUpdateTime": "2023-01-30T10:36:00Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    },
-                    {
-                        "lastTransitionTime": "2023-01-30T10:35:49Z",
-                        "lastUpdateTime": "2024-03-17T14:28:49Z",
-                        "message": "ReplicaSet \"thanos-querier-5fd9586467\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    }
-                ],
-                "observedGeneration": 5,
-                "readyReplicas": 2,
-                "replicas": 2,
-                "updatedReplicas": 2
             }
         }
     ],

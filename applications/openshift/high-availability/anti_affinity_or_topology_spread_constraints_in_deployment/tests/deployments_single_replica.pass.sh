@@ -184,31 +184,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 1,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2022-12-03T02:04:01Z",
-                        "lastUpdateTime": "2023-11-08T01:48:24Z",
-                        "message": "ReplicaSet \"argocd-dex-server-74dcd6789c\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    },
-                    {
-                        "lastTransitionTime": "2024-06-06T13:50:21Z",
-                        "lastUpdateTime": "2024-06-06T13:50:21Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    }
-                ],
-                "observedGeneration": 216,
-                "readyReplicas": 1,
-                "replicas": 1,
-                "updatedReplicas": 1
             }
         },
         {

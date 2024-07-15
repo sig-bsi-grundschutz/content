@@ -15,13 +15,6 @@ cat <<EOF > "$kube_apipath$nodes_apipath"
             "kind": "Node",
             "metadata": {
                 "annotations": {
-                    "k8s.ovn.org/host-addresses": "[\"172.10.57.6\"]",
-                    "k8s.ovn.org/l3-gateway-config": "{\"default\":{\"mode\":\"shared\",\"interface-id\":\"br-ex_ocp-control1.domain.local\",\"ip-addresses\":[\"172.10.57.6/24\"],\"ip-address\":\"172.10.57.6/24\",\"next-hops\":[\"172.10.57.1\"],\"next-hop\":\"172.10.57.1\",\"node-port-enable\":\"true\",\"vlan-id\":\"0\"}}",
-                    "k8s.ovn.org/node-chassis-id": "aa52d871-d0a8-46ee-a9be-913fd34f7692",
-                    "k8s.ovn.org/node-gateway-router-lrp-ifaddr": "{\"ipv4\":\"100.64.0.8/16\"}",
-                    "k8s.ovn.org/node-local-nat-ip": "{\"default\":[\"169.254.5.9\"]}",
-                    "k8s.ovn.org/node-primary-ifaddr": "{\"ipv4\":\"172.10.57.6/24\"}",
-                    "k8s.ovn.org/node-subnets": "{\"default\":\"10.128.0.0/23\"}",
                     "machineconfiguration.openshift.io/controlPlaneTopology": "HighlyAvailable",
                     "machineconfiguration.openshift.io/currentConfig": "rendered-master-d0a23f1409780adbe3913473e3e42154",
                     "machineconfiguration.openshift.io/desiredConfig": "rendered-master-d0a23f1409780adbe3913473e3e42154",
@@ -57,48 +50,6 @@ cat <<EOF > "$kube_apipath$nodes_apipath"
                         "key": "node-role.kubernetes.io/master"
                     }
                 ]
-            },
-            "status": {
-                "addresses": [
-                    {
-                        "address": "172.10.57.6",
-                        "type": "InternalIP"
-                    },
-                    {
-                        "address": "ocp-control1.domain.local",
-                        "type": "Hostname"
-                    }
-                ],
-                "allocatable": {
-                    "cpu": "3500m",
-                    "ephemeral-storage": "114381692328",
-                    "hugepages-2Mi": "0",
-                    "memory": "15252768Ki",
-                    "pods": "250"
-                },
-                "capacity": {
-                    "cpu": "4",
-                    "ephemeral-storage": "125277164Ki",
-                    "hugepages-2Mi": "0",
-                    "memory": "16403744Ki",
-                    "pods": "250"
-                },
-                "conditions": [],
-                "daemonEndpoints": {
-                    "kubeletEndpoint": {
-                        "Port": 10250
-                    }
-                },
-                "images": [],
-                "nodeInfo": {
-                    "architecture": "amd64",
-                    "containerRuntimeVersion": "cri-o://1.25.4-4.1.rhaos4.12.gitb9319a2.el8",
-                    "kernelVersion": "4.18.0-372.76.1.el8_6.x86_64",
-                    "kubeProxyVersion": "v1.25.14+20cda61",
-                    "kubeletVersion": "v1.25.14+20cda61",
-                    "operatingSystem": "linux",
-                    "osImage": "Red Hat Enterprise Linux CoreOS 412.86.202310170023-0 (Ootpa)"
-                }
             }
         },
         {
@@ -106,13 +57,6 @@ cat <<EOF > "$kube_apipath$nodes_apipath"
             "kind": "Node",
             "metadata": {
                 "annotations": {
-                    "k8s.ovn.org/host-addresses": "[\"172.10.57.7\"]",
-                    "k8s.ovn.org/l3-gateway-config": "{\"default\":{\"mode\":\"shared\",\"interface-id\":\"br-ex_ocp-control2.domain.local\",\"ip-addresses\":[\"172.10.57.7/24\"],\"ip-address\":\"172.10.57.7/24\",\"next-hops\":[\"172.10.57.1\"],\"next-hop\":\"172.10.57.1\",\"node-port-enable\":\"true\",\"vlan-id\":\"0\"}}",
-                    "k8s.ovn.org/node-chassis-id": "3d8ab0a6-17aa-4425-a989-e5f681672a6f",
-                    "k8s.ovn.org/node-gateway-router-lrp-ifaddr": "{\"ipv4\":\"100.64.0.2/16\"}",
-                    "k8s.ovn.org/node-local-nat-ip": "{\"default\":[\"169.254.13.130\"]}",
-                    "k8s.ovn.org/node-primary-ifaddr": "{\"ipv4\":\"172.10.57.7/24\"}",
-                    "k8s.ovn.org/node-subnets": "{\"default\":\"10.128.2.0/23\"}",
                     "machineconfiguration.openshift.io/controlPlaneTopology": "HighlyAvailable",
                     "machineconfiguration.openshift.io/currentConfig": "rendered-master-d0a23f1409780adbe3913473e3e42154",
                     "machineconfiguration.openshift.io/desiredConfig": "rendered-master-d0a23f1409780adbe3913473e3e42154",
@@ -148,50 +92,6 @@ cat <<EOF > "$kube_apipath$nodes_apipath"
                         "key": "node-role.kubernetes.io/master"
                     }
                 ]
-            },
-            "status": {
-                "addresses": [
-                    {
-                        "address": "172.10.57.7",
-                        "type": "InternalIP"
-                    },
-                    {
-                        "address": "ocp-control2.domain.local",
-                        "type": "Hostname"
-                    }
-                ],
-                "allocatable": {
-                    "cpu": "3500m",
-                    "ephemeral-storage": "114381692328",
-                    "hugepages-1Gi": "0",
-                    "hugepages-2Mi": "0",
-                    "memory": "15252816Ki",
-                    "pods": "250"
-                },
-                "capacity": {
-                    "cpu": "4",
-                    "ephemeral-storage": "125277164Ki",
-                    "hugepages-1Gi": "0",
-                    "hugepages-2Mi": "0",
-                    "memory": "16403792Ki",
-                    "pods": "250"
-                },
-                "conditions": [],
-                "daemonEndpoints": {
-                    "kubeletEndpoint": {
-                        "Port": 10250
-                    }
-                },
-                "images": [],
-                "nodeInfo": {
-                    "architecture": "amd64",
-                    "containerRuntimeVersion": "cri-o://1.25.4-4.1.rhaos4.12.gitb9319a2.el8",
-                    "kernelVersion": "4.18.0-372.76.1.el8_6.x86_64",
-                    "kubeProxyVersion": "v1.25.14+20cda61",
-                    "kubeletVersion": "v1.25.14+20cda61",
-                    "operatingSystem": "linux",
-                    "osImage": "Red Hat Enterprise Linux CoreOS 412.86.202310170023-0 (Ootpa)"
-                }
             }
         },
         {
@@ -199,13 +99,6 @@ cat <<EOF > "$kube_apipath$nodes_apipath"
             "kind": "Node",
             "metadata": {
                 "annotations": {
-                    "k8s.ovn.org/host-addresses": "[\"172.10.57.8\"]",
-                    "k8s.ovn.org/l3-gateway-config": "{\"default\":{\"mode\":\"shared\",\"interface-id\":\"br-ex_ocp-control3.domain.local\",\"ip-addresses\":[\"172.10.57.8/24\"],\"ip-address\":\"172.10.57.8/24\",\"next-hops\":[\"172.10.57.1\"],\"next-hop\":\"172.10.57.1\",\"node-port-enable\":\"true\",\"vlan-id\":\"0\"}}",
-                    "k8s.ovn.org/node-chassis-id": "33908c13-7c84-44a8-a1ec-bcc0c7b9a363",
-                    "k8s.ovn.org/node-gateway-router-lrp-ifaddr": "{\"ipv4\":\"100.64.0.3/16\"}",
-                    "k8s.ovn.org/node-local-nat-ip": "{\"default\":[\"169.254.9.205\"]}",
-                    "k8s.ovn.org/node-primary-ifaddr": "{\"ipv4\":\"172.10.57.8/24\"}",
-                    "k8s.ovn.org/node-subnets": "{\"default\":\"10.128.4.0/23\"}",
                     "machineconfiguration.openshift.io/controlPlaneTopology": "HighlyAvailable",
                     "machineconfiguration.openshift.io/currentConfig": "rendered-master-d0a23f1409780adbe3913473e3e42154",
                     "machineconfiguration.openshift.io/desiredConfig": "rendered-master-d0a23f1409780adbe3913473e3e42154",
@@ -240,48 +133,6 @@ cat <<EOF > "$kube_apipath$nodes_apipath"
                         "key": "node-role.kubernetes.io/master"
                     }
                 ]
-            },
-            "status": {
-                "addresses": [
-                    {
-                        "address": "172.10.57.8",
-                        "type": "InternalIP"
-                    },
-                    {
-                        "address": "ocp-control3.domain.local",
-                        "type": "Hostname"
-                    }
-                ],
-                "allocatable": {
-                    "cpu": "3500m",
-                    "ephemeral-storage": "114381692328",
-                    "hugepages-2Mi": "0",
-                    "memory": "15252768Ki",
-                    "pods": "250"
-                },
-                "capacity": {
-                    "cpu": "4",
-                    "ephemeral-storage": "125277164Ki",
-                    "hugepages-2Mi": "0",
-                    "memory": "16403744Ki",
-                    "pods": "250"
-                },
-                "conditions": [],
-                "daemonEndpoints": {
-                    "kubeletEndpoint": {
-                        "Port": 10250
-                    }
-                },
-                "images": [],
-                "nodeInfo": {
-                    "architecture": "amd64",
-                    "containerRuntimeVersion": "cri-o://1.25.4-4.1.rhaos4.12.gitb9319a2.el8",
-                    "kernelVersion": "4.18.0-372.76.1.el8_6.x86_64",
-                    "kubeProxyVersion": "v1.25.14+20cda61",
-                    "kubeletVersion": "v1.25.14+20cda61",
-                    "operatingSystem": "linux",
-                    "osImage": "Red Hat Enterprise Linux CoreOS 412.86.202310170023-0 (Ootpa)"
-                }
             }
         }
     ],

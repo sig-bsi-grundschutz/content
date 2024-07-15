@@ -97,31 +97,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 1,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2021-05-18T20:18:35Z",
-                        "lastUpdateTime": "2021-05-18T20:19:31Z",
-                        "message": "ReplicaSet \"nextcloud-bfc8779f6\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    },
-                    {
-                        "lastTransitionTime": "2024-06-06T13:50:21Z",
-                        "lastUpdateTime": "2024-06-06T13:50:21Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    }
-                ],
-                "observedGeneration": 1,
-                "readyReplicas": 1,
-                "replicas": 1,
-                "updatedReplicas": 1
             }
         },
         {
@@ -205,31 +180,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 6,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2024-07-15T09:40:40Z",
-                        "lastUpdateTime": "2024-07-15T09:40:40Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    },
-                    {
-                        "lastTransitionTime": "2024-07-15T09:40:37Z",
-                        "lastUpdateTime": "2024-07-15T09:40:40Z",
-                        "message": "ReplicaSet \"webserver-5dd84d945c\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    }
-                ],
-                "observedGeneration": 1,
-                "readyReplicas": 6,
-                "replicas": 6,
-                "updatedReplicas": 6
             }
         },
         {
@@ -496,31 +446,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 2,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2023-01-27T10:14:59Z",
-                        "lastUpdateTime": "2023-01-27T10:14:59Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    },
-                    {
-                        "lastTransitionTime": "2022-04-04T12:44:37Z",
-                        "lastUpdateTime": "2024-07-05T10:29:21Z",
-                        "message": "ReplicaSet \"prometheus-adapter-7d7cbd5f78\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    }
-                ],
-                "observedGeneration": 347,
-                "readyReplicas": 2,
-                "replicas": 2,
-                "updatedReplicas": 2
             }
         }
     ],

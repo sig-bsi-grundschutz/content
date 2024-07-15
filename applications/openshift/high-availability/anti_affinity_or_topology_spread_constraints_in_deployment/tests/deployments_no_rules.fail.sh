@@ -184,31 +184,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 1,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2022-12-03T02:04:01Z",
-                        "lastUpdateTime": "2023-11-08T01:48:24Z",
-                        "message": "ReplicaSet \"argocd-dex-server-74dcd6789c\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    },
-                    {
-                        "lastTransitionTime": "2024-06-06T13:50:21Z",
-                        "lastUpdateTime": "2024-06-06T13:50:21Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    }
-                ],
-                "observedGeneration": 216,
-                "readyReplicas": 1,
-                "replicas": 1,
-                "updatedReplicas": 1
             }
         },
         {
@@ -309,31 +284,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 1,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2022-04-19T12:58:24Z",
-                        "lastUpdateTime": "2023-11-07T10:28:41Z",
-                        "message": "ReplicaSet \"argocd-redis-6bfd7df9fd\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    },
-                    {
-                        "lastTransitionTime": "2024-07-11T13:58:40Z",
-                        "lastUpdateTime": "2024-07-11T13:58:40Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    }
-                ],
-                "observedGeneration": 29,
-                "readyReplicas": 1,
-                "replicas": 1,
-                "updatedReplicas": 1
             }
         },
         {
@@ -582,31 +532,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 3,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2022-04-19T12:58:24Z",
-                        "lastUpdateTime": "2023-11-08T01:49:14Z",
-                        "message": "ReplicaSet \"argocd-repo-server-646dc7684\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    },
-                    {
-                        "lastTransitionTime": "2024-07-11T13:58:40Z",
-                        "lastUpdateTime": "2024-07-11T13:58:40Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    }
-                ],
-                "observedGeneration": 163,
-                "readyReplicas": 3,
-                "replicas": 3,
-                "updatedReplicas": 3
             }
         },
         {
@@ -794,31 +719,6 @@ cat <<EOF > "$kube_apipath$deployment_apipath"
                         ]
                     }
                 }
-            },
-            "status": {
-                "availableReplicas": 3,
-                "conditions": [
-                    {
-                        "lastTransitionTime": "2022-04-19T12:58:24Z",
-                        "lastUpdateTime": "2023-11-08T01:49:20Z",
-                        "message": "ReplicaSet \"argocd-server-6f58975d9d\" has successfully progressed.",
-                        "reason": "NewReplicaSetAvailable",
-                        "status": "True",
-                        "type": "Progressing"
-                    },
-                    {
-                        "lastTransitionTime": "2024-07-11T13:58:41Z",
-                        "lastUpdateTime": "2024-07-11T13:58:41Z",
-                        "message": "Deployment has minimum availability.",
-                        "reason": "MinimumReplicasAvailable",
-                        "status": "True",
-                        "type": "Available"
-                    }
-                ],
-                "observedGeneration": 143,
-                "readyReplicas": 3,
-                "replicas": 3,
-                "updatedReplicas": 3
             }
         }
     ],

@@ -92,17 +92,6 @@ cat <<EOF > "$kube_apipath$statefulset_apipath"
                     },
                     "type": "RollingUpdate"
                 }
-            },
-            "status": {
-                "availableReplicas": 2,
-                "collisionCount": 0,
-                "currentReplicas": 2,
-                "currentRevision": "webserver-d85b48787",
-                "observedGeneration": 1,
-                "readyReplicas": 2,
-                "replicas": 2,
-                "updateRevision": "webserver-d85b48787",
-                "updatedReplicas": 2
             }
         }
     ],

@@ -176,17 +176,6 @@ cat <<EOF > "$kube_apipath$statefulset_apipath"
                         }
                     }
                 ]
-            },
-            "status": {
-                "availableReplicas": 1,
-                "collisionCount": 0,
-                "currentReplicas": 1,
-                "currentRevision": "trivy-846b7fc8dd",
-                "observedGeneration": 1,
-                "readyReplicas": 1,
-                "replicas": 1,
-                "updateRevision": "trivy-846b7fc8dd",
-                "updatedReplicas": 1
             }
         }
     ],
