@@ -510,6 +510,8 @@ controls:
       # Section 1-2
       - configure_network_policies_namespaces
       - project_config_and_template_network_policy
+      # Section 3
+      - configure_appropriate_network_policies
 
   - id: APP.4.4.A19
     title: High Availability of Kubernetes
