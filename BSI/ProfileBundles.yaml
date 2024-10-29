@@ -1,0 +1,17 @@
+apiVersion: compliance.openshift.io/v1alpha1
+kind: ProfileBundle
+metadata:
+  name: upstream-rhcos4
+  namespace: openshift-compliance
+spec:
+  contentFile: ssg-rhcos4-ds.xml
+  contentImage: quay.io/sluetzen/sig-bsi-grundschutz-content@sha256:c69db5c430b46f102a0bdea1f22ff66dd74c8fc7b921ed9d0039c6dba4a831be
+---
+apiVersion: compliance.openshift.io/v1alpha1
+kind: ProfileBundle
+metadata:
+  name: upstream-ocp4
+  namespace: openshift-compliance
+spec:
+  contentFile: ssg-ocp4-ds.xml
+  contentImage: quay.io/sluetzen/sig-bsi-grundschutz-content@sha256:c69db5c430b46f102a0bdea1f22ff66dd74c8fc7b921ed9d0039c6dba4a831be

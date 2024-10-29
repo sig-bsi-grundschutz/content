@@ -1,0 +1,41 @@
+apiVersion: compliance.openshift.io/v1alpha1
+kind: ScanSettingBinding
+metadata:
+  name: upstream-bsi-ocp
+  namespace: openshift-compliance
+profiles:
+  - apiGroup: compliance.openshift.io/v1alpha1
+    kind: Profile
+    name: upstream-ocp4-bsi
+  - apiGroup: compliance.openshift.io/v1alpha1
+    kind: Profile
+    name: upstream-ocp4-bsi-node
+settingsRef:
+  apiGroup: compliance.openshift.io/v1alpha1
+  kind: ScanSetting
+  name: bsi-schedule
+---
+apiVersion: compliance.openshift.io/v1alpha1
+kind: ScanSettingBinding
+metadata:
+    name: upstream-bsi-rhcos
+    namespace: openshift-compliance
+profiles:
+  - apiGroup: compliance.openshift.io/v1alpha1
+    kind: Profile
+    name: upstream-rhcos4-bsi
+settingsRef:
+    apiGroup: compliance.openshift.io/v1alpha1
+    kind: ScanSetting
+    name: bsi-schedule
+---
+apiVersion: compliance.openshift.io/v1alpha1
+kind: ScanSetting
+maxRetryOnTimeout: 3
+metadata:
+  name: bsi-schedule
+  namespace: openshift-compliance
+roles:
+  - master
+  - worker
+schedule: 0 1 * * 1
