@@ -370,6 +370,7 @@ selections:
 - package_audispd-plugins_installed
 - package_audit_installed
 - package_chrony_installed
+- package_cron_installed
 - package_crypto-policies_installed
 - package_fapolicyd_installed
 - package_firewalld_installed
@@ -505,6 +506,8 @@ selections:
 - sysctl_net_ipv6_conf_default_accept_redirects
 - sysctl_net_ipv6_conf_default_accept_source_route
 - sysctl_user_max_user_namespaces
+- sysctl_user_max_user_namespaces.role=unscored
+- sysctl_user_max_user_namespaces.severity=info
 - usbguard_generate_policy
 - use_pam_wheel_for_su
 - wireless_disable_interfaces
